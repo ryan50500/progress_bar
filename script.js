@@ -12,7 +12,7 @@ next.addEventListener('click', () => {
         currentActive = circles.length
     }
 
-    update()
+    update();
 })
 
 prev.addEventListener('click', () => {
@@ -22,6 +22,24 @@ prev.addEventListener('click', () => {
         currentActive = 1
     }
 
-    update()
+    update();
 })
 
+function update(){
+    console.log(currentActive);
+    if(currentActive > 1) {
+        // disabling PREVIEW button
+        prev.disabled = false;
+    }
+    if (currentActive === 1) {
+        prev.disabled = true;
+    }
+
+    if(currentActive > 3) {
+          // disabling NEXT button
+        next.disabled = true;
+    }
+    if(currentActive <= 3)  {
+        next.disabled = false;
+    }
+}
