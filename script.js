@@ -14,7 +14,7 @@ next.addEventListener('click', () => {
 
     update();
     // progress bar colour
-    barWidth();
+    barWidthNext();
 })
 
 prev.addEventListener('click', () => {
@@ -26,7 +26,7 @@ prev.addEventListener('click', () => {
 
     update();
     // progress bar colour
-    barWidth();
+    barWidthPrev();
 })
 
 function update(){
@@ -49,18 +49,43 @@ function update(){
 }
 
 
-// change the colour of progress bar
-function barWidth(){
+// change the colour of progress bar and circle
+function barWidthNext(){
     if (currentActive === 1) {
         progress.style.width = "0%";
+        circles[0].classList.add('active');
     }
     else if  (currentActive === 2)  {
         progress.style.width = "33%";
+        circles[1].classList.add('active');
     }
     else if  (currentActive === 3)  {
         progress.style.width = "65%";
+        circles[2].classList.add('active');
     }
-    else if  (currentActive === 4)  {
+    else if (currentActive === 4)  {
+        progress.style.width = "100%";
+        circles[3].classList.add('active');
+    }
+}
+
+
+
+// change the colour of progress bar and circle
+function barWidthPrev(){
+    if (currentActive === 1) {
+        progress.style.width = "0%";
+        circles[1].classList.remove('active');
+    }
+    else if  (currentActive === 2)  {
+        progress.style.width = "33%";
+        circles[2].classList.remove('active');
+    }
+    else if  (currentActive === 3)  {
+        progress.style.width = "65%";
+        circles[3].classList.remove('active');
+    }
+    else if (currentActive === 4)  {
         progress.style.width = "100%";
     }
 }
