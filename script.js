@@ -13,6 +13,8 @@ next.addEventListener('click', () => {
     }
 
     update();
+    // progress bar colour
+    barWidth();
 })
 
 prev.addEventListener('click', () => {
@@ -23,6 +25,8 @@ prev.addEventListener('click', () => {
     }
 
     update();
+    // progress bar colour
+    barWidth();
 })
 
 function update(){
@@ -41,5 +45,22 @@ function update(){
     }
     if(currentActive <= 3)  {
         next.disabled = false;
+    }
+}
+
+
+// change the colour of progress bar
+function barWidth(){
+    if (currentActive === 1) {
+        progress.style.width = "0%";
+    }
+    else if  (currentActive === 2)  {
+        progress.style.width = "33%";
+    }
+    else if  (currentActive === 3)  {
+        progress.style.width = "65%";
+    }
+    else if  (currentActive === 4)  {
+        progress.style.width = "100%";
     }
 }
